@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Square with size"""
+
+
 class Square:
     """Representation of a square"""
 
