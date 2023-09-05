@@ -1,0 +1,54 @@
+# 3-say_my_name.txt
+===================
+
+This modules defines a function ``say_my_name(first_name, last_name="")``.
+
+Usage
+=====
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Elon", "Musk") #doctest: +NORMALIZE_WHITESPACE
+    My name is Elon Musk
+
+
+>>> say_my_name("Mark", "Zuckerberg") #doctest: +NORMALIZE_WHITESPACE
+    My name is Mark Zuckerberg
+
+
+>>> say_my_name("Danson Mail", "Nilson") #doctest: +NORMALIZE_WHITESPACE
+    My name is Danson Mail Nilson
+
+
+>>> say_my_name("Nilson") #doctest: +NORMALIZE_WHITESPACE
+    My name is Nilson
+
+
+>>> say_my_name(10, "Nilson") #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: First Name must be of type string.
+
+
+>>> say_my_name("Elon", ["mark","nail","Nilson"]) #doctest: +NORMALIZE_WHITESPACE 
+Traceback (most recent call last):
+    ...
+TypeError: Last Name must be of type string.
+
+
+>>> say_my_name() #doctest: +NORMALIZE_WHITESPACE                                 
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+>>> say_my_name(None) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: First Name must be of type string.
+
+
+>>> say_my_name({"Mark": 18, "Katy":15}, 31.10) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: First Name must be of type string.
