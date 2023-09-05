@@ -14,8 +14,6 @@ Usage
 >>> print(add_integer(4, -3)) #doctest: +NORMALIZE_WHITESPACE, +ELLIPSIS
 1
 
-The function also works with float values.
-
 >>> print(add_integer(5.0, 4.0)) #doctest: +NORMALIZE_WHITESPACE, +ELLIPSIS
 9
 
