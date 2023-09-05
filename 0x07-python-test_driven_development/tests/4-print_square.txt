@@ -1,0 +1,57 @@
+# 4-print_square.txt
+====================
+
+This module defines a square-printing function ``print_square(size)``
+
+>>> print_square = __import__('4-print_square').print_square
+
+Usage
+=====
+
+>>> print_square(7) #doctest: +NORMALIZE_WHITESPACE
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+
+>>> print_square(5) #doctest: +NORMALIZE_WHITESPACE
+    #####
+    #####
+    #####
+    #####
+    #####
+
+>>> print_square(0) 
+
+>>> print_square(None)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square("School") #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>> print_square("18.4")   
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>> print_square("-18.4")   
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>> print_square("18")   
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>> print_square()   
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
