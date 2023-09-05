@@ -1,0 +1,86 @@
+# 2-matrix_divided.txt
+======================
+
+This module defines a matrix division function ``matrix_divided(matrix, div)``.
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Usage
+=====
+>>> matrix = [[3, 5, 9], [10, 12, 13]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+[[1.0, 1.67, 3.0], [3.33, 4.0, 4.33]]
+
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> print(matrix_divided(matrix, 4)) #doctest: +NORMALIZE_WHITESPACE
+[[0.25, 0.5, 0.75], [1.0, 1.25, 1.5]]
+
+>>> matrix = [[1.2, -4.3, 3.3],[5.5, -3.3, 4.4]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+[[0.4, -1.43, 1.1], [1.83, -1.1, 1.47]]
+
+>>> matrix = "Diamond In The Sky"
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = None
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = []
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [5, 7, 10]
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = None
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[4, 5, 3],[4,"You",5]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[2,3,15],[18,12,5,31]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix = [[1,2,3],[4,5,6]]
+>>> print(matrix_divided(matrix, 0)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+>>> matrix = [[1,2,3],[4,5,6]]
+>>> print(matrix_divided(matrix, "school")) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+   ...
+TypeError: div must be a number
+
+>>> matrix = [[1,2,3],[4,5,6]]
+>>> print(matrix_divided(matrix, None)) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+   ...
+TypeError: div must be a number
