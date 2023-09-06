@@ -27,7 +27,7 @@ def matrix_divided(matrix, div):
         uni_len = len(matrix[0])
     except:
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-    
+
     new_matrix = []
     for row in matrix:
         if len(row) != uni_len:
