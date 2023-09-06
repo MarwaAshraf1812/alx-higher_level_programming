@@ -13,8 +13,9 @@ def say_my_name(first_name, last_name=""):
     Returns:
     None: This function doesn't return a value, it prints the message directly.
     """
+
     if not isinstance(first_name, str):
-        raise TypeError("First Name must be of type string.")
+        raise TypeError("First Name must be of type string")
     if not isinstance(last_name, str):
-        raise TypeError("Last Name must be of type string.")
+        raise TypeError("Last Name must be of type string")
     print("My name is {} {}".format(first_name, last_name))
