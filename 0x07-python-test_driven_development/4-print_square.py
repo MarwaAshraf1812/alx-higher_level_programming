@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a square-printing function."""
 
+
 def print_square(size):
     """
     Print a square made of '#' characters with the specified size.
@@ -18,4 +19,3 @@ def print_square(size):
         raise ValueError("size must be >= 0")
     for i in range(size):
         print("#" * size) 
-    
