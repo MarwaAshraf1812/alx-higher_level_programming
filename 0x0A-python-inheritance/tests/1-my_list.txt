@@ -2,6 +2,11 @@ Testing 1-my_list.py
 ====================
 
 >>>MyList = __import__('1-my_list').MyList
+>>>
+>>> print(len(__import__('1-my_list').MyList.__doc__) > 1)
+True
+>>> print(len(__import__('1-my_list').__doc__) > 1)
+True
 
 Usage
 =====
