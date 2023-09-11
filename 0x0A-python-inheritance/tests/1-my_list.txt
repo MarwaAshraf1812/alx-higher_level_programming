@@ -1,7 +1,7 @@
 Testing 1-my_list.py
 ====================
 
->>>MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 >>>
 >>> print(len(__import__('1-my_list').MyList.__doc__) > 1)
 True
@@ -62,3 +62,6 @@ Usage
 >>> my_list.append(3)
 >>> my_list.print_sorted()
 [1, 2, 3]
+>>> print(my_list)
+[1, 2, 3]
+>>>
