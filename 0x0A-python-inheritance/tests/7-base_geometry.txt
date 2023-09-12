@@ -101,3 +101,9 @@ TypeError: age must be an integer
 Traceback (most recent call last):
     ...
 ValueError: age must be greater than 0
+
+base = BaseGeometry()
+>>> bg.integer_validator("width", (89))
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
