@@ -16,6 +16,6 @@ class Student:
 
     def to_json(self, attrs=None):
         """Retrieves a dictionary representation of the Student instance."""
-        if (type(attrs) == list and 
+        if (type(attrs) == list and
             all(type(element)  == str) for element in attrs):
             return {i: getattr(self, attrs) for i in element}
