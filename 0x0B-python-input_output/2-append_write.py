@@ -10,5 +10,4 @@ def append_write(filename="", text=""):
     if filename == "" or text == "":
         return
     with open(filename, mode='a', encoding="UTF8") as f:
-        return f.write(text)
-
+        return json.write(text)
