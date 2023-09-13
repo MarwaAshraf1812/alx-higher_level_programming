@@ -11,4 +11,4 @@ def load_from_json_file(filename):
     if filename == "":
         return
     with open(filename, mode='w', encoding="UTF8") as file_name:
-        json.load(file_name)
+        return json.load(file_name)
