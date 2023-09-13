@@ -8,6 +8,8 @@ import json
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 1:
+        sys.exit()
     save_to_file = __import__('5-save_to_json_file').save_to_json_file
     load_from_file = __import__('6-load_from_json_file').load_from_json_file
 
@@ -15,7 +17,6 @@ if __name__ == "__main__":
         list_item = load_from_file("add_item.json")
     except FileNotFoundError:
         list_item = []
-    if len(sys.argv) < 1:
-        sys.exit()
+
     list_item.extend(sys.argv[1:])
     save_to_file(list_item, "add_item.json")
