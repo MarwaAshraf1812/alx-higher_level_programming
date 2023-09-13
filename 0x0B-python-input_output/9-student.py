@@ -5,6 +5,7 @@ Represents a student with attributes such as first name, last name, and age.
 
 
 class student:
+    """Class Student"""
     def __init__(self, first_name, last_name, age):
         """Initializes a new Student instance."""
         self.first_name = first_name
