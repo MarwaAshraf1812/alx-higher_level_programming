@@ -88,7 +88,7 @@ class Rectangle(Base):
         Return the print() and str() representation of a Square.
         """
         return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
-            {self.__width}/{self.__height}'
+{self.__width}/{self.__height}'
 
     def update(self, *args, **kwargs):
         """
