@@ -61,7 +61,7 @@ class Base:
         """
         Returns an instance with all attrs already set
         """
-        dic1 = cls(1,1)
+        dic1 = cls(1, 1)
         dic1.update(**dictionary)
         return dic1
 
