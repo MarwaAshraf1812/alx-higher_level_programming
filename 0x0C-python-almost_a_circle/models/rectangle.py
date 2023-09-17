@@ -81,13 +81,14 @@ class Rectangle(Base):
                 print()
         hash_pattern = '#'
         for row in range(self.__height):
-            print((self.__x * " " ) + (self.__width * hash_pattern))
-        
+            print((self.__x * " ") + (self.__width * hash_pattern))
+
     def __str__(self):
         """
         Return the print() and str() representation of a Square.
         """
-        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
+            {self.__width}/{self.__height}'
 
     def update(self, *args, **kwargs):
         """
