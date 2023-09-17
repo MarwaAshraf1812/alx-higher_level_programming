@@ -10,6 +10,7 @@ class Base:
     Base of the other shapes
     """
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id:
             self.id = id
@@ -37,7 +38,11 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                #to_json_string to convert list_objs to a JSON string. and to_dictionary to format
+
+                """
+                to_json_string to convert list_objs to a JSON string.
+                and to_dictionary to format
+                """
                 list_dictionary = [item.to_dictionary() for item in list_objs]
                 json_string = cls.to_json_string(list_dictionary)
                 f.write(json_string)
@@ -56,7 +61,6 @@ class Base:
         """
         Returns an instance with all attrs already set
         """
-        #create object
         dic1 = cls(1,1)
         dic1.update(**dictionary)
         return dic1
