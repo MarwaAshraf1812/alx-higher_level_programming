@@ -61,9 +61,14 @@ class Base:
         """
         Returns an instance with all attrs already set
         """
-        dic1 = cls(1, 1)
-        dic1.update(**dictionary)
-        return (dic1)
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                dic1 = cls(1, 1)
+            else:
+                """Size of square"""
+                dic1 = cls(1)
+            dic1.update(**dictionary)
+            return (dic1)
 
     @classmethod
     def load_from_file(cls):
@@ -73,11 +78,7 @@ class Base:
         file_name = cls.__name__ + '.json'
         try:
             with open(file_name, mode='r', encoding='UTF8') as f:
-                file_data = f.read()
+                list_dicts = Base.from_json_string(f.read())
+                return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
-
-        if not file_data:
-            return[]
-        data = json.loads(file_data)
-        return [cls.create(**line) for line in data]
