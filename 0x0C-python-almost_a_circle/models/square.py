@@ -2,6 +2,8 @@
 """
 This module contains the Square class.
 """
+
+
 from models.rectangle import Rectangle
 
 
@@ -43,10 +45,10 @@ class Square(Rectangle):
         """
         Updates square values
         """
-        if len(kwargs) != 0:
+        if kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-        elif len(args) != 0:
+        elif args and len(args) != 0:
             try:
                 self.id = args[0]
                 self.size = args[1]
