@@ -29,6 +29,7 @@ class Square(Rectangle):
         Set a new width for this square
         size needs to be an int
         """
+
         self.width = value
         self.height = value
 
@@ -42,8 +43,7 @@ class Square(Rectangle):
         return super().display()
 
     def update(self, *args, **kwargs):
-        """
-        Updates square values
+        """Updates square values
         """
         if kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
@@ -58,8 +58,7 @@ class Square(Rectangle):
                 pass
 
     def to_dictionary(self):
-        """
-        Return the dictionary representation of the Square.
+        """Return the dictionary representation of the Square.
         """
         return {
             'id': self.id,
