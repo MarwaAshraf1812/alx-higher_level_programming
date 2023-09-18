@@ -45,10 +45,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Updates square values
         """
-        if kwargs and len(kwargs) != 0:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-        elif args and len(args) != 0:
+        if args and len(args) != 0:
             try:
                 self.id = args[0]
                 self.size = args[1]
@@ -56,6 +53,9 @@ class Square(Rectangle):
                 self.y = args[3]
             except IndexError:
                 pass
+        elif kwargs and len(kwargs) != 0:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """Return the dictionary representation of the Square.
