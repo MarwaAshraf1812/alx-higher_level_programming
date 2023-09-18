@@ -3,7 +3,7 @@
 This module contains the base class
 """
 import json
-import csv
+
 
 class Base:
     """
@@ -53,7 +53,7 @@ class Base:
         Returns JSON strings in list
         """
         if json_string is None or json_string == []:
-            return '[]'
+            return []
         return json.loads(json_string)
 
     @classmethod
