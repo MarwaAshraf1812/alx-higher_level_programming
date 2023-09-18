@@ -77,10 +77,10 @@ class Rectangle(Base):
         y is newline, x is space
         """
         if self.__y != 0:
-            for newline in range(self.__y):
+            for n in range(self.__y):
                 print()
         hash_pattern = '#'
-        for row in range(self.__height):
+        for r in range(self.__height):
             print((self.__x * " ") + (self.__width * hash_pattern))
 
     def __str__(self):
