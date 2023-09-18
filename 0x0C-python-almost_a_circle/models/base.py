@@ -63,7 +63,7 @@ class Base:
         """
         dic1 = cls(1, 1)
         dic1.update(**dictionary)
-        return dic1
+        return (dic1)
 
     @classmethod
     def load_from_file(cls):
