@@ -5,6 +5,7 @@ This module contains the base class
 import json
 import csv
 
+
 class Base:
     """
     Base of the other shapes
@@ -112,8 +113,8 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
-                list_dicts = [dict([k, int(v)] for k, v in d.items())\
-                        for d in list_dicts]
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                                    for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
