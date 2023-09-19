@@ -82,7 +82,7 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
-        
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Write the CSV serialization of a list of objects to a file.
@@ -112,7 +112,7 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
-                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                list_dicts = [dict([k, int(v)] for k, v in d.items())\
                         for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
