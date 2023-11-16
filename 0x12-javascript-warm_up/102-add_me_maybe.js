@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
-exports.incrementAndCall = function (number, theFunction) {
-    number++;
-}
+exports.addMeMaybe = function (number, theFunction) {
+  theFunction(++number);
+};
