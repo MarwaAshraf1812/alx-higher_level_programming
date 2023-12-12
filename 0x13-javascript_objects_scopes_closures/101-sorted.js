@@ -12,4 +12,3 @@ for (const key in dict) {
   }
   keysByValue[value].push(key);
 }
-
