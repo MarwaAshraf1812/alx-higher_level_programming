@@ -36,6 +36,5 @@ if __name__ == '__main__':
             [state_name]
         )
         rows = mycursor.fetchall()
-        for row in rows:
-            print(row)
+        print(', '.join(map(lambda x: x[0], rows)))
         mydb.close()
