@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
 Prints the State object with the name passed
-as argument from the database hbtn_0e_6_usa.
+as an argument from the database hbtn_0e_6_usa.
 """
+
 import sys
 from sqlalchemy import create_engine
 from model_state import Base, State
@@ -25,11 +26,14 @@ if __name__ == "__main__":
 
         try:
             state = session.query(State).filter_by(name=search).first()
+
             if state:
                 print(state.id)
             else:
-                print("NOT found")
-        except Exception as a:
-            print("Error: ", a)
+                print("Not found")
+
+        except Exception as e:
+            print("Error:", e)
+
         finally:
             session.close()
