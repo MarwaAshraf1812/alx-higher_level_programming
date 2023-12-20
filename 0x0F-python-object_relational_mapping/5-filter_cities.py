@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 '''
-Lists all cities from the database hbtn_0e_4_usa
+Lists all cities of a given state from the database hbtn_0e_4_usa
 
 Parameters:
     - <username>: MySQL database username.
     - <password>: MySQL database password.
     - <database>: Name of the MySQL database.
+    - <state_name>: Name of the state.
 
 Note: No argument validation needed.
 
 Example:
-    ./4-cities_by_state.py root root hbtn_0e_4_usa
+    ./5-filter_cities.py root root hbtn_0e_4_usa Texas
 '''
 
 import sys
@@ -26,14 +27,12 @@ if __name__ == '__main__':
             database=sys.argv[3]
         )
         mycursor = mydb.cursor()
-        state_input = sys.argv[4]
-        mycursor.execute(
-            'SELECT  cities.name FROM cities ' +
-            'INNER JOIN states ON cities.state_id = states.id ' +
-            'WHERE CAST(states.name AS BINARY)=%s' +
-            'ORDER BY cities.id ASC;',
-            [state_input]
-        )
+        state_name = sys.argv[4]
+        query = 'SELECT cities.id, cities.name, states.name ' \
+                'FROM cities INNER JOIN states ON cities.state_id = states.id ' \
+                'WHERE states.name = %s ' \
+                'ORDER BY cities.id ASC;'
+        mycursor.execute(query, (state_name, ))
         rows = mycursor.fetchall()
         for row in rows:
             print(row)
