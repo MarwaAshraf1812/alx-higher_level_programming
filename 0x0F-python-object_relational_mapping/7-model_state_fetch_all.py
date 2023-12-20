@@ -8,7 +8,7 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:  
+    if len(sys.argv) == 4:
         user = sys.argv[1]
         password = sys.argv[2]
         database = sys.argv[3]
