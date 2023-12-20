@@ -32,7 +32,7 @@ if __name__ == '__main__':
         mycursor = mydb.cursor()
         mycursor.execute(
             "SELECT * FROM states "
-            "WHERE name LIKE 'N%' COLLATE utf8mb4_general_ci "
+            "WHERE name LIKE 'N%' "
             "ORDER BY id ASC;"
         )
 
