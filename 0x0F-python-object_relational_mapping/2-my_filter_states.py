@@ -28,15 +28,11 @@ if __name__ == '__main__':
         )
         mycursor = mydb.cursor()
         state_name = sys.argv[4]
-        try:
-            mycursor.execute(
-                'SELECT * FROM states WHERE CAST(name AS BINARY) LIKE CAST(%s AS BINARY) ORDER BY id ASC;',
-                (state_name,)
-            )
-            rows = mycursor.fetchall()
-        except Exception as e:
-            print(f"Error executing SQL query: {e}")
-
+        mycursor.execute(
+              'SELECT * FROM states WHERE CAST(name AS BINARY) LIKE ' +
+              'CAST("{}" AS BINARY) ORDER BY id ASC;'.format(state_name)
+        )
+        rows = mycursor.fetchall()
         for row in rows:
             print(row)
         mydb.close()
