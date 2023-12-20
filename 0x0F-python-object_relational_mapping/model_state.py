@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the class definition of a State 
+Contains the class definition of a State
 an instance Base = declarative_base().
 """
 
