@@ -1,7 +1,19 @@
 #!/usr/bin/python3
 '''
 Prints all rows in the states table of a database.
+
+Usage:
+    python script.py <username> <password> <database>
+
+Parameters:
+    - <user>: MySQL database username.
+    - <password>: MySQL database password.
+    - <database>: Name of the MySQL database.
+
+Example:
+    python script.py myuser mypassword mydatabase
 '''
+
 import sys
 import MySQLdb
 
