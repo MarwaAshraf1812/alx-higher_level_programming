@@ -28,11 +28,13 @@ if __name__ == '__main__':
         )
         mycursor = mydb.cursor()
         state_name = sys.argv[4]
-        query = 'SELECT cities.id, cities.name, states.name ' \
-                'FROM cities INNER JOIN states ON cities.state_id = states.id ' \
-                'WHERE states.name = %s ' \
-                'ORDER BY cities.id ASC;'
-        mycursor.execute(query, (state_name, ))
+        mycursor.execute(
+            'SELECT cities.name FROM cities' +
+            ' INNER JOIN states ON cities.state_id = states.id' +
+            ' WHERE CAST(states.name AS BINARY) = %s' +
+            ' ORDER BY cities.id ASC;',
+            [state_name]
+        )
         rows = mycursor.fetchall()
         for row in rows:
             print(row)
