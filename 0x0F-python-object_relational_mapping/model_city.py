@@ -10,6 +10,7 @@ from model_state import Base
 
 Base = declarative_base()
 
+
 class City(Base):
     """
     City class that inherits from Base.
