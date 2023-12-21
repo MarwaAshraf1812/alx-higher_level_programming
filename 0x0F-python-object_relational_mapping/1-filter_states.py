@@ -33,7 +33,7 @@ if __name__ == '__main__':
         mycursor.execute(
             "SELECT * FROM states "
             "WHERE name LIKE 'N%' "
-            "ORDER BY id ASC;"
+            "OBINARY 'N%' ORDER BY id;"
         )
 
         rows = mycursor.fetchall()
