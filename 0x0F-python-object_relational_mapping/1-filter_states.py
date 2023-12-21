@@ -32,7 +32,7 @@ if __name__ == '__main__':
         mycursor = mydb.cursor()
         mycursor.execute(
             "SELECT * FROM states "
-            "WHERE name LIKE 'N%' BINARY 'N%'"
+            "WHERE name LIKE 'N%' BINARY 'N%' "
             "ORDER BY id;"
         )
 
