@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends a GET request to the URL, and displays the body of the response
-curl -s -L "${1}"
+# sends a DELETE request to the URL passed as the first argument and displays the body of the response
+curl -s -X DELETE "${1}"
