@@ -18,11 +18,10 @@ if __name__ == "__main__":
     resp_type = response.headers['content-type']
 
     if resp_type and 'application/json' in resp_type:
-        try:
-            result = response.json()
-            if result:
-                print("[{}] {}".format(result['id'], result['name']))
-            else:
-                print('No result')
-        except ValueError:
-            print("Not a valid JSON")
+        result = response.json()
+        if result:
+            print("[{}] {}".format(result['id'], result['name']))
+        else:
+            print('No result')
+    else:
+        print('Not a valid JSON')
