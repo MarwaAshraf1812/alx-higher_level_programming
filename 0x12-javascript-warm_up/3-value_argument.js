@@ -1,9 +1,7 @@
 #!/usr/bin/node
+const { argv } = require('process');
+let len = 0;
 
-const args = process.argv;
+argv.forEach(() => len++);
 
-if (!args[2]) {
-  console.log('No argument');
-} else {
-  console.log(args[2]);
-}
+console.log(len === 2 ? 'No argument' : argv[2]);
